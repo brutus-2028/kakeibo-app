@@ -1,0 +1,348 @@
+/* 色やサイズの共通設定 */
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --border: #e3e1da;
+  --text: #1f1e1c;
+  --text-muted: #6b6a65;
+  --accent: #2a78d6;
+  --accent-hover: #1c5cab;
+  --danger: #c63b3a;
+  --warning-bg: #fff4dc;
+  --warning-text: #7a5300;
+  color-scheme: light;
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 4px 0 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  margin: 0;
+}
+
+/* フォーム部品 */
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+button.primary:not(:disabled):hover {
+  background: var(--accent-hover);
+}
+
+button.link {
+  padding: 4px 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+}
+
+button.link.danger {
+  color: var(--danger);
+}
+
+input,
+select {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  min-width: 0;
+}
+
+/* アップロード */
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.file-picker {
+  display: block;
+  width: 100%;
+  padding: 24px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.file-picker:hover {
+  border-color: var(--accent);
+}
+
+.file-picker input {
+  display: none;
+}
+
+.preview {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.error {
+  margin: 0;
+  color: var(--danger);
+}
+
+.warning {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--warning-bg);
+  color: var(--warning-text);
+  font-size: 0.9rem;
+}
+
+/* 読み取り結果の確認フォーム */
+.draft h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.draft-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.draft-header label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex: 1 1 200px;
+}
+
+.draft-header input {
+  color: var(--text);
+}
+
+.draft .items input:not(.price) {
+  width: 100%;
+}
+
+.draft .price {
+  width: 7em;
+  text-align: right;
+}
+
+.draft-total {
+  margin: 12px 0 0;
+}
+
+.draft-total span {
+  margin-left: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* 表 */
+.items,
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.items th,
+.items td,
+.summary-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.items th {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--text-muted);
+}
+
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.summary-table tfoot td {
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.category-select {
+  border-left-width: 4px;
+}
+
+/* グラフ */
+.pie-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.pie-chart {
+  position: relative;
+  flex: 0 0 240px;
+  height: 240px;
+  margin: 0 auto;
+}
+
+.pie-layout .summary-table {
+  flex: 1 1 260px;
+  width: auto;
+}
+
+.bar-chart {
+  position: relative;
+  height: 320px;
+}
+
+.empty {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* レシート一覧 */
+.receipt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.receipt {
+  border-bottom: 1px solid var(--border);
+}
+
+.receipt summary {
+  display: flex;
+  gap: 12px;
+  padding: 10px 4px;
+  cursor: pointer;
+}
+
+.receipt-date {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.receipt-store {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.receipt-total {
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.receipt details[open] {
+  padding-bottom: 8px;
+}
+
+/* スマホ幅では表を詰める */
+@media (max-width: 560px) {
+  .items th,
+  .items td {
+    padding: 6px 4px;
+  }
+
+  .draft .price {
+    width: 5.5em;
+  }
+}
